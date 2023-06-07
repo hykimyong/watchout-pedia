@@ -38,12 +38,12 @@ const Emphasis = styled.em`
 
 const Container = styled.section`
   background:#1c1d1f;
-  padding 20px 0 38px;
+  padding: 20px 0 38px;
 `;
 
 const ContentWrapper = styled.div`
   display: flex;
-  margin 0 60px;
+  margin: 0 60px;
 `;
 
 const Left = styled.div``;
