@@ -74,7 +74,7 @@ const Card: React.FC<Props> = ({ linkUrl, title, posterPath, voteAverage, year }
   <StyledLink to={linkUrl}>
     <Base>
       <ImageWrapper>
-        <Image src={posterPath} alt={`${title} 의 포스터`} />
+        <Image src={posterPath} alt={`${title} 의 포스터1`} />
       </ImageWrapper>
       <Info>
         <Title>{title}</Title>
