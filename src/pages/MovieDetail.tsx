@@ -1,6 +1,7 @@
 import React, {useMemo} from 'react';
 import styled from "@emotion/styled";
 import { useParams } from 'react-router-dom';
+import {Rating} from '@mui/material';
 import { AiOutlinePlus, AiFillEye } from 'react-icons/ai';
 import { FaPen } from 'react-icons/fa';
 import { FiMoreHorizontal } from 'react-icons/fi';
@@ -256,6 +257,7 @@ const MovieDetail: React.FC<Props> = () => {
                       <StarRate>
                         <StarRateText>평가하기</StarRateText>
                         <RatingWrapper>
+                          <Rating/>
                         </RatingWrapper>
                       </StarRate>
                       <Divider />
