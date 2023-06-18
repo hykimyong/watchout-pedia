@@ -146,30 +146,6 @@ const SearchInput = styled.input`
   line-height: 23px;
 `;
 
-const SignIn = styled.button`
-  background: transparent;
-  color: rgb(116, 116, 123);
-  font-size: 14px;
-  padding: 0;
-  border: 0;
-  cursor: pointer;
-  margin: 15px 0;
-`;
-
-const SignUp = styled.button`
-  border-radius: 6px;
-  font-weight: 500;
-  box-sizing: border-box;
-  min-width: 72px;
-  height: 32px;
-  background: transparent;
-  color: rgb(53, 53, 53);
-  font-size: 14px;
-  border: 1px solid rgba(116, 116, 123, 0.5);
-  cursor: pointer;
-  margin: 15px 0;
-`;
-
 interface Props {}
 
 const Header: React.FC<Props> = () => {
