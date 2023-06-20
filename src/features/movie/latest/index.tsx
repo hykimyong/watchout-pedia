@@ -3,6 +3,7 @@ import styled from '@emotion/styled';
 
 import useLatestMovie from './useLatestMovie';
 import Card from '../../../components/Card';
+import useSplitYear from '../../../common/useSplitYear';
 
 const Base = styled.div`
   margin-bottom: 42px;
@@ -17,8 +18,7 @@ const Title = styled.h4`
 
 const LatestMovieSection: React.FC = () => {
   const { data: latestMovieResponse, isLoading } = useLatestMovie();
-
-  const getYear = (release_date: string) => release_date.split('-')[0] || '';
+  const splitYear = useSplitYear();
 
   return (
     <Base>
@@ -34,7 +34,7 @@ const LatestMovieSection: React.FC = () => {
               title={latestMovieResponse.data.title}
               posterPath={`${process.env.REACT_APP_IMAGE_PREFIX}/${latestMovieResponse.data.poster_path}`}
               voteAverage={latestMovieResponse.data.vote_average}
-              year={getYear(latestMovieResponse.data.release_date)}
+              year={splitYear(latestMovieResponse.data.release_date)}
             />
           )
         )
