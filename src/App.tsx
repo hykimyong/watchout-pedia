@@ -1,9 +1,11 @@
 import React from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom'; 
-import MainPage from './pages/MainPage';
-import MovieDetail from './pages/MovieDetail';
-import TvDetail from './pages/TvDetail';
-import TvPage from './pages/TvPage';
+// import MainPage from './pages/MainPage';
+// import MovieDetail from './pages/MovieDetail';
+// import TvDetail from './pages/TvDetail';
+// import TvPage from './pages/TvPage';
+import IndexPokemonPage from './pages/IndexPokemonPage';
+import DetailPokemonPage from './pages/DetailPokemonPage';
 
 
 function App() {
@@ -11,10 +13,12 @@ function App() {
     <div>
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<MainPage />} />
+        <Route path="/" element={<IndexPokemonPage />} />
+        <Route path="/:id" element={<DetailPokemonPage />} />
+          {/* <Route path="/" element={<MainPage />} />
           <Route path="/tv" element={<TvPage />} />
           <Route path="/movie/:id" element={<MovieDetail />} />
-          <Route path="/tv/:id" element={<TvDetail />} />
+          <Route path="/tv/:id" element={<TvDetail />} /> */}
         </Routes>
       </BrowserRouter>
     </div>
