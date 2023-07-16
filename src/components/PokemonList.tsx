@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from '@emotion/styled/macro';
-import usePokemon from '../hooks/usePokemon';
+import usePokemon from '../hooks/usePokemonQuery';
 import { ListResponse } from '../types/indexPokemon';
 
 const Base = styled.div`
