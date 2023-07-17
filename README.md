@@ -44,3 +44,19 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
 To learn React, check out the [React documentation](https://reactjs.org/).
+
+
+### react-router-dom 이슈처리
+6버전 이상을 쓴다면 useParams()으로 파라미터를 받을때  
+string으로 정의를 하더라도 아래와같이 undefined처리를 같이 해줘야함
+
+```
+type Params = {
+    id: string;
+}
+  const { id } = useParams<Params>();
+```
+
+id에대한 undefined체크를 위한 해결방법
+1. const { id = '' } = useParams<Params>(); //값이 들어올때 없을면 ''으로 초기화를 해주거나
+2. if(id) {}                                //id가 없을때에 대한 if문을 걸어주거나
