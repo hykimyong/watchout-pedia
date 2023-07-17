@@ -60,3 +60,6 @@ type Params = {
 id에대한 undefined체크를 위한 해결방법
 1. const { id = '' } = useParams<Params>(); //값이 들어올때 없을면 ''으로 초기화를 해주거나
 2. if(id) {}                                //id가 없을때에 대한 if문을 걸어주거나
+
+
+출처 : https://velog.io/@euji42/Typescript-useParams-%ED%83%80%EC%9E%85-oi26j7va
