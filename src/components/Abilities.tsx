@@ -3,9 +3,10 @@ import styled from '@emotion/styled/macro';
 
 import { Ability, Color, EffectEntry } from '../types/indexPokemon';
 import { mapColorToHex } from '../utils';
+import useAbilities from '../hooks/useAbilities';
 
 interface Props {
-  abilities?: Array<Ability>;
+  abilities: Array<Ability>;
   color?: Color;
 }
 
@@ -51,14 +52,26 @@ const Description = styled.span`
 `;
 
 const Abilities: React.FC<Props> = ({ abilities,color }) => {
+  const results = useAbilities(abilities);
+
+  const getEffectEntry = (effectEntries: Array<EffectEntry>) => { // 영문 반환
+    return effectEntries.find(effectEntry => effectEntry.language.name === 'en') || effectEntries[0];
+  };
+
   return (
     <Base>
       <Title color={mapColorToHex(color?.name)}>Abilities</Title>
       <List>
-        <ListItem>
-          <Label>Label</Label>
-          <Description>Description</Description>
-        </ListItem>
+      {
+          results.map(({ data }, idx) => (
+            data && (
+              <ListItem key={idx}>
+                <Label>{data.data.name}</Label>
+                <Description>{getEffectEntry(data.data.effect_entries).effect}</Description>
+              </ListItem>
+            )
+          ))
+        }
       </List>
     </Base>
   )
