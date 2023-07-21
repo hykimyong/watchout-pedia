@@ -54,7 +54,7 @@ const Description = styled.span`
 const Abilities: React.FC<Props> = ({ abilities,color }) => {
   const results = useAbilities(abilities);
 
-  const getEffectEntry = (effectEntries: Array<EffectEntry>) => { // 영문 반환
+  const getEffectEntry = (effectEntries: Array<EffectEntry>) => { 
     return effectEntries.find(effectEntry => effectEntry.language.name === 'en') || effectEntries[0];
   };
 
