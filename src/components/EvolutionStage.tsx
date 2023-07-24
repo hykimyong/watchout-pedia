@@ -5,6 +5,14 @@ import { Color } from '../types/indexPokemon';
 import { mapColorToHex } from '../utils';
 
 interface Props {
+  from: {
+    name:string;
+    url:string;
+  }
+  to: {
+    name:string;
+    url:string;
+  }
   level: number;
   color?: Color;
 }
@@ -45,7 +53,7 @@ const Base = styled.li`
   align-items: center;
 `;
 
-const EvolutionStage: React.FC<Props> = ({ level, color }) => (
+const EvolutionStage: React.FC<Props> = ({ from,to,level, color }) => (
   <Base>
     <ImageWrapper>
       <Image />
